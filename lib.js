@@ -158,12 +158,13 @@ function getTopTracks(){
         var img = data.items[i].album.images[2].url;
         var trackname = data.items[i].name;
         var artistname = data.items[i].artists[0].name;
+        var url = data.items[i].external_urls.spotify;
         let place = document.querySelector(".after");
         let track = `<div class="track">
             <p>${i+1}${s}</p>
             <img src="${img}" alt="Album Art">
             <div class="info">
-            <p class"tname">${trackname}</p>
+            <p class="tname"><a href="${url}" target="_blank">${trackname}</a></p>
             <p class"aname">${artistname}</p>
             </div>
             <p id="gray">100 listens</p>
@@ -183,13 +184,14 @@ function getTopArtist(){
         }
         var img = data.items[i].images[2].url;
         var artistname = data.items[i].name;
+        var url = data.items[i].external_urls.spotify;
         let place = document.querySelector(".after");
         let track = `<div class="track">
             <p>${i+1}${s}</p>
             <p></p>
             <img src="${img}" alt="Album Art">
             <div class="info">
-            <p class"aname">${artistname}</p>
+            <p class"aname"><a href="${url}" target="_blank">${artistname}</a></p>
             </div>
             <p id="gray">100 listens</p>
         </div>`;
@@ -203,6 +205,7 @@ function getRecentt(){
         var img = data.items[i].track.album.images[2].url;
         var trackname = data.items[i].track.name;
         var artistname = data.items[i].track.artists[0].name;
+        var url = data.items[i].track.external_urls.spotify;
         var date = data.items[i].played_at;
         console.log(i + " " + date);
         var h = date.at(11) + date.at(12);
@@ -241,7 +244,7 @@ function getRecentt(){
         let track = `<div class="track">
             <img src="${img}" alt="Album Art">
             <div class="info">
-            <p class="tname">${trackname}</p>
+            <p class="tname"><a href="${url}" target="_blank">${trackname}</a></p>
             <p class"aname">${artistname}</p>
             </div>
             <p>${t} ${pl} ago</p>

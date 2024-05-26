@@ -103,6 +103,13 @@ body{
     margin-left: 8vw;
     max-width: 85%;
 }
+.recent-tracks a{
+    text-decoration: none;
+    color: black;
+}
+.recent-tracks a:hover{
+    text-decoration: underline;
+}
 .track{
     display: flex;
     flex-direction: row;

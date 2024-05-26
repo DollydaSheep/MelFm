@@ -50,11 +50,12 @@ function getRecent(){
         var img = data.items[i].track.album.images[2].url;
         var trackname = data.items[i].track.name;
         var artistname = data.items[i].track.artists[0].name;
+        var url = data.items[i].track.external_urls.spotify;
         let place = document.querySelector(".after");
         let track = `<div class="track">
             <img src="${img}" alt="Album Art">
             <div class="info">
-            <p class="tname">${trackname}</p>
+            <p class="tname"><a href="${url}" target="_blank">${trackname}</a></p>
             <p class"aname">${artistname}</p>
             </div>
         </div>`;
@@ -79,6 +80,7 @@ function getTrackInfo(){
             var img = data.item.album.images[2].url;
             var trackname = data.item.name;
             var artistname = data.item.artists[0].name;
+            var url = data.item.external_urls.spotify;
             let place = document.querySelector(".after");
             let last = document.querySelector(".recent-tracks");
             let rem = document.querySelector(".track");
@@ -98,7 +100,7 @@ function getTrackInfo(){
             let track = `<div class="track" id="currentPlaying">
             <img src="${img}" alt="Album Art">
             <div class="info">
-            <p class="tname">${trackname}</p>
+            <p class="tname"><a href="${url}" target="_blank">${trackname}</a></p>
             <p class"aname">${artistname}</p>
             </div>
             <p id="cr">Currently Playing</p>

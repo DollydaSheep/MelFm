@@ -152,6 +152,13 @@ body{
     margin-left: 8vw;
     max-width: 85%;
 }
+.content-area a{
+    text-decoration: none;
+    color: black;
+}
+.content-area a:hover{
+    text-decoration: underline;
+}
 .track{
     display: flex;
     flex-direction: row;
