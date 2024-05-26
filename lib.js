@@ -31,6 +31,9 @@ function onpageload(){
         console.log(access);
         if(access!=null){
             callAPI("GET", 'https://api.spotify.com/v1/me/player/recently-played?limit=10', null, getRecentt);
+            let place = document.querySelector(".after");
+            let head = `<h1 id="head">Recent Tracks</h1>`;
+            place.insertAdjacentHTML("afterbegin", head);
         }
     }
 }
@@ -51,6 +54,8 @@ function recent(){
     for(let i=0;i<10;i++){
         rem.removeChild(rem.children[1]);
     }
+    rem = document.getElementById("head");
+    rem.remove();
 
     changeCSS = document.getElementById("recent-h2");
     changeCSS.style.color = "black";
@@ -70,6 +75,9 @@ function recent(){
     activeCSS2 = "recent-i";
     activeCSS3 = ".recent";
     callAPI("GET", 'https://api.spotify.com/v1/me/player/recently-played?limit=10', null, getRecentt);
+    let place = document.querySelector(".after");
+    let head = `<h1 id="head">Recent Tracks</h1>`;
+    place.insertAdjacentHTML("afterbegin", head);
 }
 
 function artists(){
@@ -77,6 +85,8 @@ function artists(){
     for(let i=0;i<10;i++){
         rem.removeChild(rem.children[1]);
     }
+    rem = document.getElementById("head");
+    rem.remove();
 
     changeCSS = document.getElementById("artists-h2");
     changeCSS.style.color = "black";
@@ -98,6 +108,9 @@ function artists(){
     if(access!=null){
         callAPI("GET", 'https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10', null, getTopArtist);
     }
+    let place = document.querySelector(".after");
+    let head = `<h1 id="head">Top Artists</h1>`;
+    place.insertAdjacentHTML("afterbegin", head);
 }
 
 function tracks(){
@@ -105,6 +118,8 @@ function tracks(){
     for(let i=0;i<10;i++){
         rem.removeChild(rem.children[1]);
     }
+    rem = document.getElementById("head");
+    rem.remove();
 
     changeCSS = document.getElementById("tracks-h2");
     changeCSS.style.color = "black";
@@ -126,6 +141,9 @@ function tracks(){
     if(access!=null){
         callAPI("GET", 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10', null, getTopTracks);
     }
+    let place = document.querySelector(".after");
+    let head = `<h1 id="head">Top Tracks</h1>`;
+    place.insertAdjacentHTML("afterbegin", head);
 }
 
 function getTopTracks(){
@@ -230,6 +248,7 @@ function getRecentt(){
         </div>`;
         place.insertAdjacentHTML("afterend", track);
     }
+
 }
 
 function refreshAccessToken(){
