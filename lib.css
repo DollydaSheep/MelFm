@@ -114,12 +114,12 @@ body{
     color: black;
 }
 .recent:hover{
-    border-bottom: 2px solid black;
-    cursor: pointer;
+    border-bottom: 2px solid black !important;
+    cursor: pointer !important;
 }
 .recent:hover h2,
 .recent:hover i{
-    color: black;
+    color: black !important;
 }
 .artists{
     display:flex;
@@ -127,12 +127,12 @@ body{
     border-bottom: 2px solid transparent;
 }
 .artists:hover{
-    border-bottom: 2px solid black;
-    cursor: pointer;
+    border-bottom: 2px solid black !important;
+    cursor: pointer !important;
 }
 .artists:hover h2,
 .artists:hover i{
-    color: black;
+    color: black !important;
 }
 .tracks{
     display: flex;
@@ -140,12 +140,12 @@ body{
     border-bottom: 2px solid transparent;
 }
 .tracks:hover{
-    border-bottom: 2px solid black;
-    cursor: pointer;
+    border-bottom: 2px solid black !important;
+    cursor: pointer !important;
 }
 .tracks:hover h2,
 .tracks:hover i{
-    color: black;
+    color: black !important;
 }
 .content-area{
     margin-top: 10vh;
