@@ -184,6 +184,6 @@ function auth(){
     url += "&response_type=code";
     url += "&redirect_uri=" + encodeURI(redirect_uri);
     url += "&show_dialog=true";
-    url += "&scope=user-read-currently-playing user-read-playback-state user-read-recently-played";
+    url += "&scope=user-read-currently-playing user-read-playback-state user-read-recently-played user-top-read";
     window.location.href = url;
 }
