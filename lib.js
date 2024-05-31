@@ -27,7 +27,7 @@ function onpageload(){
         handleRedirect();
     }
     else{
-        access = localStorage.getItem("access_token");
+        access = sessionStorage.getItem("access_token");
         console.log(access);
         if(access!=null){
             callAPI("GET", 'https://api.spotify.com/v1/me/player/recently-played?limit=10', null, getRecentt);
@@ -255,7 +255,7 @@ function getRecentt(){
 }
 
 function refreshAccessToken(){
-    refresh = localStorage.getItem("refresh_token");
+    refresh = sessionStorage.getItem("refresh_token");
     let body = "grant_type=refresh_token";
     body += "&refresh_token=" + refresh;
     body += "&client_id=" + clientId;
@@ -265,8 +265,10 @@ function refreshAccessToken(){
 
 function handleRedirect(){
     let code = getCode();
-    fetchAccessToken( code );
-    window.history.pushState("", "", redirect_uri);
+    if (code) {
+        fetchAccessToken(code);
+        window.history.pushState("", "", redirect_uri);
+    }
 }
 
 function fetchAccessToken( code ){
@@ -293,11 +295,11 @@ function handleAuthorizationResponse(){
         console.log(data);
         if(data.access_token != undefined){
             access = data.access_token;
-            localStorage.setItem("access_token", access);
+            sessionStorage.setItem("access_token", access);
         }
         if(data.refresh_token != undefined){
             refresh = data.refresh_token;
-            localStorage.setItem("refresh_token", refresh);
+            sessionStorage.setItem("refresh_token", refresh);
         }
         onpageload();
     }

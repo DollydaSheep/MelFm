@@ -159,12 +159,10 @@ function handleAuthorizationResponse(){
         if(data.access_token != undefined){
             access = data.access_token;
             sessionStorage.setItem("access_token", access);
-            console.log(sessionStorage.getItem("access_token"));
         }
         if(data.refresh_token != undefined){
             refresh = data.refresh_token;
             sessionStorage.setItem("refresh_token", refresh);
-            console.log(sessionStorage.getItem("refresh_token"));
         }
         onpageload();
     }
