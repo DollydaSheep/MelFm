@@ -1,4 +1,4 @@
-var redirect_uri = "http://127.0.0.1:5500/homepage.html"
+var redirect_uri = "https://melfm.netlify.app/homepage"
 
 var clientId = '3d5f27f68e2a4d199904609ac0b0d41f';
 var clientSecret = '6f8b0da94035484f916a17da808f6153';
